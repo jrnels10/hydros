@@ -1,0 +1,33 @@
+.page__container__Home {
+  color: white;
+  background-image: url("./../../Images/image.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.page__container__Adjudication .adj__manage__POU {
+  position: relative;
+  float: left;
+  height: calc(100% - 30px);
+  overflow-y: auto;
+}
+
+.page__container__Adjudication .adj__manage__POU--active {
+  width: 600px;
+}
+
+.page__container__Adjudication .adj__manage__POU--hidden {
+  width: 0px;
+}
+
+.page__container__Adjudication .adj__map__container {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: calc(100% - 30px);
+}
+
+.page__container__Adjudication .adj__map__container--active {
+  width: calc(100% - 600px);
+}
+/*# sourceMappingURL=adj.css.map */

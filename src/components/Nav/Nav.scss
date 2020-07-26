@@ -1,0 +1,66 @@
+.navbar {
+  width: 175px;
+  height: 100vh;
+  position: relative;
+  float: left;
+  box-shadow: 10px 0px 18px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  background: linear-gradient(to right, #3a3633 93%, #2a2725 100%);
+  transition: left 0.5s ease;
+
+  .hydros__banner {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    width: 175px;
+    background: #f3f3f3;
+    .hydros__logo {
+      margin-left: 10px;
+      margin-top: 10px;
+      text-align: center;
+      // width: 100%;
+      // padding: 15px;
+      height: 30px;
+    }
+  }
+
+  .navbar__header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    top: 50px;
+    height: 38px;
+    color: #c0bbb7;
+    border-bottom: 1px solid black;
+  }
+
+  .navbar__button__container {
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    a {
+      .nav__button {
+        color: #c0bbb7 !important;
+        position: relative;
+        width: 100%;
+        height: 39px;
+        outline: none;
+        text-decoration: none;
+        background: linear-gradient(to right, #3a3633 93%, #2a2725 100%);
+        border: none;
+        i {
+          height: 10px;
+          float: left;
+          margin-top: 3px;
+        }
+
+        span {
+          font-size: 14px;
+          float: left;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.page__container {
+  width: calc(100% - 175px);
+  float: left;
+  height: 100vh;
+}
+/*# sourceMappingURL=App.css.map */

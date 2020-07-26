@@ -1,0 +1,70 @@
+.navbar {
+  width: 175px;
+  height: 100vh;
+  position: relative;
+  float: left;
+  -webkit-box-shadow: 10px 0px 18px rgba(0, 0, 0, 0.25);
+          box-shadow: 10px 0px 18px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  background: -webkit-gradient(linear, left top, right top, color-stop(93%, #3a3633), to(#2a2725));
+  background: linear-gradient(to right, #3a3633 93%, #2a2725 100%);
+  -webkit-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+}
+
+.navbar .hydros__banner {
+  position: absolute;
+  top: 0;
+  height: 50px;
+  width: 175px;
+  background: #f3f3f3;
+}
+
+.navbar .hydros__banner .hydros__logo {
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+  height: 30px;
+}
+
+.navbar .navbar__header {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  top: 50px;
+  height: 38px;
+  color: #c0bbb7;
+  border-bottom: 1px solid black;
+}
+
+.navbar .navbar__button__container {
+  position: absolute;
+  width: 100%;
+  top: 90px;
+}
+
+.navbar .navbar__button__container a .nav__button {
+  color: #c0bbb7 !important;
+  position: relative;
+  width: 100%;
+  height: 39px;
+  outline: none;
+  text-decoration: none;
+  background: -webkit-gradient(linear, left top, right top, color-stop(93%, #3a3633), to(#2a2725));
+  background: linear-gradient(to right, #3a3633 93%, #2a2725 100%);
+  border: none;
+}
+
+.navbar .navbar__button__container a .nav__button i {
+  height: 10px;
+  float: left;
+  margin-top: 3px;
+}
+
+.navbar .navbar__button__container a .nav__button span {
+  font-size: 14px;
+  float: left;
+  margin-left: 15px;
+}
+/*# sourceMappingURL=Nav.css.map */

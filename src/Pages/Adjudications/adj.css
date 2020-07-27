@@ -13,7 +13,7 @@
 }
 
 .page__container__Adjudication .adj__manage__POU--active {
-  width: 600px;
+  width: 50%;
 }
 
 .page__container__Adjudication .adj__manage__POU--hidden {
@@ -28,6 +28,6 @@
 }
 
 .page__container__Adjudication .adj__map__container--active {
-  width: calc(100% - 600px);
+  width: calc(100% - 50%);
 }
 /*# sourceMappingURL=adj.css.map */

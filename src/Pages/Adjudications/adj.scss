@@ -12,7 +12,7 @@
     height: calc(100% - 30px);
     overflow-y: auto;
     &--active {
-      width: 600px;
+      width: 50%;
     }
     &--hidden {
       width: 0px;
@@ -25,7 +25,7 @@
     height: calc(100% - 30px);
 
     &--active {
-      width: calc(100% - 600px);
+      width: calc(100% - 50%);
     }
   }
 }

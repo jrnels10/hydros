@@ -9,7 +9,7 @@ export const CreateFeatureLayer = async (url, id, popupTemplate, renderer) => {
             layer.id = id
         }
         else if (popupTemplate) {
-            layer.popupTemplate = popupTemplate
+            layer.popupTemplate = popupTemplate()
         }
         else if (renderer) {
             layer.renderer = renderer
@@ -20,10 +20,27 @@ export const CreateFeatureLayer = async (url, id, popupTemplate, renderer) => {
     }
 };
 
+export const CreateLayer = async (id) => {
+    try {
+        const [FeatureLayer] = await loadModules(["esri/layers/FeatureLayer"]);
+
+        var lyr = new FeatureLayer({
+            portalItem: {  // autocasts as new PortalItem()
+                id: "dc1195da0aef431183ef768d4877cde3"
+            },
+            // loads the third item in the given feature service
+            // layerId: 0// the first layer in the service is returned
+        });
+        return lyr;
+    } catch (error) {
+        console.log(error)
+    }
+};
+
 export const CreateMap = async (elementId, center, zoom) => {
     try {
         const [MapView, esriConfig, Map] = await loadModules(['esri/views/MapView', "esri/config", 'esri/Map']);
-        esriConfig.portalUrl = "https://gisweb3.azwater.gov/portal/sharing/rest/content/items";
+        esriConfig.portalUrl = "https://dwrarcgis.azwater.gov/portal/sharing/rest/content/items";
         const webmap = new Map({
             basemap: 'satellite'
         });

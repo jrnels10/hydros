@@ -5,18 +5,53 @@ var measureThisAction = {
 
 export const POUTemp = (actions) => {
     return {
-        title: "{REGISTRY_ID}",
+        title: "{POU_CODE}",
         content: [
             {
                 type: "fields",
                 fieldInfos: [
                     {
-                        fieldName: "REGISTRY_ID",
-                        label: "REGISTRY_ID"
+                        fieldName: "POU_CODE",
+                        label: "POU_CODE"
                     },
                     {
-                        fieldName: "OWNER_NAME",
-                        label: "OWNER_NAME"
+                        fieldName: "CLAIMANT",
+                        label: "CLAIMANT"
+                    }
+                ]
+            }
+        ],
+        actions: [measureThisAction]
+    };
+};
+
+
+export const PODTemp = (actions) => {
+    return {
+        title: "Place of Use {DWR_ID}",
+        content: [
+            {
+                type: "fields",
+                fieldInfos: [
+                    {
+                        fieldName: "DWR_ID",
+                        label: "DWR_ID"
+                    },
+                    {
+                        fieldName: "Use",
+                        label: "Use"
+                    },
+                    {
+                        fieldName: "Name",
+                        label: "Name"
+                    },
+                    {
+                        fieldName: "ContactName",
+                        label: "Contact Name"
+                    },
+                    {
+                        fieldName: "ContactPhone",
+                        label: "Contact Phone"
                     }
                 ]
             }

@@ -5,10 +5,10 @@ import Home from './Pages/Home/Home';
 import Adjucation from './Pages/Adjudications/Adjucation';
 import Navbar from './components/Nav/Navbar';
 import hydrosLogo from './Images/hydrosLogo.png';
-
 import './App.css'
 import { POU_Table } from './Pages/Adjudications/POU';
 import AdjIndex from './Pages/Adjudications/AdjIndex';
+import LogsIndex from './Pages/DrillerLog/LogsIndex';
 
 export const App = () => {
     return (<div className='container-fluid bg-light p-0 m-0 h-100' id='app-div'>
@@ -17,6 +17,7 @@ export const App = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/adjudications/" component={AdjIndex} />
+                <Route path="/logs/" component={LogsIndex} />
             </Switch>
         </BrowserRouter>
     </div>)

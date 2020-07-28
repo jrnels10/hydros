@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function POUData() {
     try {
-        return axios.post(`http://testintranet/Hydros/Adjudications/GetPlaceOfUsePolygons`, {
+        return axios.post(`http://localhost:53646/Adjudications/GetPlaceOfUsePolygons`, {
             withCredentials: true
         }).catch(function (error) {
             console.log(error)

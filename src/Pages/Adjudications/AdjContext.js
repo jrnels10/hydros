@@ -13,7 +13,14 @@ const reducer = (state, action) => {
                 ...state,
                 managePOU: action.payload.managePOU,
             }
-
+        case 'MAP_VIEW':
+            // must be structured with keys type and item
+            // type: determines the tab that the data is loaded under
+            // results:{type:'GWSI', item:feature[0]}
+            return {
+                ...state,
+                view: action.payload.view,
+            }
         default:
             return state;
     }
@@ -23,6 +30,7 @@ const reducer = (state, action) => {
 export class ADJProvider extends Component {
     state = {
         managePOU: null,
+        view: null,
         adjDispatch: action => {
             if (action.length > 0) {
                 action.map(item => {

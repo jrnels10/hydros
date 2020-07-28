@@ -19,19 +19,30 @@ export const CreateFeatureLayer = async (url, id, popupTemplate, renderer) => {
         console.log(error)
     }
 };
-
-export const CreateLayer = async (id) => {
+export async function findLayerById(view, title) {
     try {
-        const [FeatureLayer] = await loadModules(["esri/layers/FeatureLayer"]);
-
-        var lyr = new FeatureLayer({
-            portalItem: {  // autocasts as new PortalItem()
-                id: "dc1195da0aef431183ef768d4877cde3"
-            },
-            // loads the third item in the given feature service
-            // layerId: 0// the first layer in the service is returned
+        return await view.map.allLayers.find((layer) => {
+            return layer.id === title;
         });
-        return lyr;
+    } catch (error) {
+        console.log(error)
+    }
+
+}
+export const CreateBookMark = async (view) => {
+    try {
+        const [Bookmarks, BookmarksViewModel] = await loadModules(["esri/widgets/Bookmarks", "esri/widgets/Bookmarks/BookmarksViewModel"]);
+        const bookmarks = new BookmarksViewModel({ view });
+        let newList = [];
+        const marker = await bookmarks.createBookmark();
+        const existingBookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+        if (existingBookmarks) {
+            newList = [...existingBookmarks, marker];
+        }
+        newList.push(marker)
+        localStorage.setItem("bookmarks", JSON.stringify(newList));
+        return bookmarks
+
     } catch (error) {
         console.log(error)
     }
@@ -55,4 +66,24 @@ export const CreateMap = async (elementId, center, zoom) => {
         console.log(error)
     }
 };
-
+export const CreatePortalMap = async (elementId, center, zoom) => {
+    try {
+        const [MapView, esriConfig, WebMap] = await loadModules(['esri/views/MapView', "esri/config", 'esri/WebMap']);
+        esriConfig.portalUrl = "https://dwrarcgis.azwater.gov/portal/sharing/rest/content/items";
+        const webmap = new WebMap({
+            portalItem: {
+                // autocasts as new PortalItem()
+                id: "c3590a75773b4b189643228b68bc051d"
+            }
+        });
+        const view = new MapView({
+            map: webmap,
+            container: elementId,
+            center: center,
+            zoom: zoom
+        });
+        return { view, webmap }
+    } catch (error) {
+        console.log(error)
+    }
+};

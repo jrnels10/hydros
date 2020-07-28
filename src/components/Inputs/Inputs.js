@@ -8,7 +8,7 @@ export default class TextInputs extends Component {
     render() {
         const { name } = this.props;
         return (
-            <input type='text' name={name} className={`form-control`} onChange={e => this.handleChange(e)} />
+            <input type='text' name={name} className={`form-control form-control-sm`} onChange={e => this.handleChange(e)} />
         )
     };
 };

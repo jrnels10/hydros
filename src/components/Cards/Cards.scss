@@ -1,6 +1,4 @@
 .card {
-  max-height: 1000px;
-  transition: max-height 300ms;
   .card__title {
     background-color: rgb(36, 36, 36);
     width: 100%;
@@ -12,12 +10,33 @@
       background-color: rgb(88, 88, 88);
     }
   }
-
+  &--visible {
+    max-height: 1000px;
+    transition: all 500ms;
+    .card__expand__container {
+      overflow: hidden;
+      .card__content {
+        &--visible {
+          margin-top: 0;
+          opacity: 1;
+          transition: all 500ms;
+        }
+      }
+    }
+  }
   &--hidden {
     max-height: 40px;
-    transition: max-height 300ms;
-    .card__content {
-      display: none;
+    transition: all 500ms;
+    .card__expand__container {
+      overflow: hidden;
+      .card__content {
+        &--hidden {
+          opacity: 0;
+          margin-top: -100%;
+          transition: all 500ms;
+          // transition-delay: display 2s;
+        }
+      }
     }
   }
 }

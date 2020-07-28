@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import Page from '../../components/Containers/Page';
+import React, { Component } from 'react'
+import Page from '../../components/Containers/Page'
 
-export default class Adjucation extends Component {
+export default class Home extends Component {
     render() {
         return (
-            <Page name='Home'>
+            <Page>
                 Home
             </Page>
         )

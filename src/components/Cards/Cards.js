@@ -8,8 +8,10 @@ export const Card = ({ formIdx, children, title }) => {
             className={`card__title card__title--${openCard ? 'visible' : 'hidden'}`}
             onClick={() => setopenCard(!openCard)}
         >{title}</label>
-        <div className='card__content container'>
-            {children}
+        <div className={`card__expand__container`}>
+            <div id="expand-contract" className={`card__content card__content--${openCard ? 'visible' : 'hidden'} container`}>
+                {children}
+            </div>
         </div>
     </div>
 }

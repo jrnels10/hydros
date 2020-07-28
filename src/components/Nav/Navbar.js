@@ -16,12 +16,16 @@ export default class Navbar extends Component {
                 </div>
                 <div className='navbar__button__container'>
                     <NavBarButtonContainer to='/'>
-                        <i className="fa fa-fw fa-sort-amount-desc"></i>
+                        <i className="fa fa-fw fa-home"></i>
                         <span>Home</span>
                     </NavBarButtonContainer>
                     <NavBarButtonContainer to='/adjudications'>
                         <i className="fa fa-fw fa-gavel"></i>
                         <span>Adjudications</span>
+                    </NavBarButtonContainer>
+                    <NavBarButtonContainer to='/logs'>
+                        <i className="fa fa-fw fa-sort-numeric-desc"></i>
+                        <span>Lithology</span>
                     </NavBarButtonContainer>
                 </div>
             </div >

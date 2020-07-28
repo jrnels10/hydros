@@ -1,19 +1,25 @@
 import React, { Component } from 'react'
 import LogSearch from './LogSearch'
+import {LogsProvider, LogsConsumer} from './LogsContext';
+import { Route } from 'react-router-dom'
 import './Log.css'
+import Page from '../../components/Containers/Page';
+import DrillerLog from './DrillerLog';
 
 export default class LogsIndex extends Component {
     render() {
         return (
-            <div id="LogContainer" className="h-100">
-                <div className="container h-100 p-3">
-                <div className="row w-100 h-100 align-items-center">
-                    <div className="col-md-8 offset-md-2">
-                        <LogSearch></LogSearch>
-                    </div>
-                </div>
-                </div>
-            </div>
+            <LogsProvider>
+                <LogsConsumer>
+                    {value => {
+                        return <Page name='DrillerLog'>
+                            <DrillerLog value={value}>
+                            <Route path="/logs/search" render={() => <LogSearch></LogSearch>} />
+                            </DrillerLog>
+                        </Page>
+                    }}
+                </LogsConsumer>
+            </LogsProvider>
         )
     }
 }

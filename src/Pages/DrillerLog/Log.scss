@@ -1,0 +1,26 @@
+@import '../../cssVariables.scss';
+
+$LogSearchButtonWidth: 75px;
+
+#LogContainer{
+    margin-left: $navbarDefaultWidth;
+    background-image: url('./../../Images/lithologyBackground_resize.jpg');
+    background-position: center; /* Center the image */
+    background-size: cover;
+    height: 100%;
+
+    #LogSearchBtn {
+        cursor: pointer;
+        margin-top: -5px;
+        width: $LogSearchButtonWidth;
+    }
+
+    #LogSearch {
+        width: calc(100% - #{$LogSearchButtonWidth});
+        border-radius: 2px;
+    }
+
+    #LogSearchGroup {
+        box-shadow: 5px 10px 8px 5px #414141
+    }
+}

@@ -15,3 +15,19 @@ export const Card = ({ formIdx, children, title }) => {
         </div>
     </div>
 }
+
+export const BookmarkCard = ({ children }) => {
+    const [openCard, setopenCard] = useState(false)
+
+    return <div className={`card bookmark__card--${openCard ? 'visible' : 'hidden'}`}>
+        <label
+            className={`bookmark__card__title bookmark__card__title--${openCard ? 'visible' : 'hidden'}`}
+            onClick={() => setopenCard(!openCard)}
+        >hello</label>
+        <div className={`bookmark__card__expand__container`}>
+            <div className={`bookmark__card__content bookmark__card__content--${openCard ? 'visible' : 'hidden'} container`}>
+                {children}
+            </div>
+        </div>
+    </div>
+}

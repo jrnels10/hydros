@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CreateFeatureLayer, CreateMap, CreateLayer, CreateBookMark, CreatePortalMap, findLayerById } from '../../../components/ESRI/ESRITools';
+import { CreateFeatureLayer, CreateMap, CreateLayer, CreateBookMark, CreatePortalMap, findLayerById, setMapExtent, zoomTo } from '../../../components/ESRI/ESRITools';
 import { POUTemp, PODTemp } from './AdjPopupTemplates';
 import { popupAction } from './AdjActions';
 import { POUData } from '../../../Utils/API';
@@ -27,38 +27,25 @@ export default class AdjMap extends Component {
             const layer = await findLayerById(view, 'LLC_PODS_ALL_98');
             layer.popupTemplate = PODTemp()
         })
-        // const { view, webmap } = await CreateMap('adjViewDiv', initialCenter, initialZoom);
-        // const res = await POUData()
-        // debugger
-        // const POUlayer = await CreateFeatureLayer('https://dwrarcgis.azwater.gov/server/rest/services/LLC_POUS_IR_POLYS/MapServer/0', null, POUTemp);
-        // const PODlayer = await CreateFeatureLayer('https://dwrarcgis.azwater.gov/server/rest/services/LLC_PODS_ALL/MapServer/0', null, PODTemp);
-        // const layerTest = await CreateLayer('dc1195da0aef431183ef768d4877cde3');
-        // webmap.addMany([POUlayer, PODlayer]);
-        // webmap.add(layerTest);
+
         popupAction(view, this.managePOU);
+        setMapExtent(view);
 
-
-        view.on('drag', function (event) {
-            var point = view.toMap({ x: event.x, y: event.y });
-            document.cookie = `mapLng=${point.longitude}`;
-            document.cookie = `mapLat=${point.latitude}`;
-            document.cookie = `mapZoom=${view.zoom}`;
-        });
-        view.on('mouse-wheel', function (event) {
-            var point = view.toMap({ x: event.x, y: event.y });
-            document.cookie = `mapLng=${point.longitude}`;
-            document.cookie = `mapLat=${point.latitude}`;
-            document.cookie = `mapZoom=${view.zoom}`;
-        });
         view.ui.add("logoDiv", "bottom-right");
         // this.props.setMapView(view);
+        this.setState({ view })
         this.props.value.adjDispatch({ type: 'MAP_VIEW', payload: { view: view } });
     }
 
-    managePOU = (item) => {
+    managePOU = async (item) => {
         const { value, data } = this.props;
         const matchedData = data.find(dataItem => dataItem === item)
         this.setState({ manage: item });
+        value.view.goTo({
+            center: [-112, 32],
+            zoom: 15
+        })
+        // await zoomTo(this.state.view)
     }
 
 

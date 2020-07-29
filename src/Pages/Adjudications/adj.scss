@@ -1,13 +1,14 @@
 @import "./../../cssVariables.scss";
 
-.page__container__Home {
-  color: white;
-  background-image: url("./../../Images/image.png");
-  background-position: center;
-  background-size: cover;
-}
-
 .page__container__Adjudication {
+  .adj_home {
+    color: white;
+    background-image: url("./../../Images/image.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: calc(100% - 30px);
+  }
   .adj__map__container {
     position: relative;
     float: left;
@@ -87,14 +88,4 @@
       }
     }
   }
-  // .adj__map__container {
-  //   position: relative;
-  //   float: left;
-  //   width: 100%;
-  //   height: calc(100% - 30px);
-
-  //   // &--active {
-  //   //   width: calc(100% - 60%);
-  //   // }
-  // }
 }

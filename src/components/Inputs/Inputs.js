@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 
 export default class TextInputs extends Component {
     handleChange = (e) => {
+        const { name, callback } = this.props;
         this.setState({ value: e.target.value });
+        return callback ? callback(e.target.value) : null;
     };
 
     render() {

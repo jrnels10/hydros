@@ -3,6 +3,7 @@ import './adj.css'
 import { RibbonContainer } from '../../components/Containers/Ribbons';
 import { NavButton } from '../../components/Buttons/NavButtons';
 import { CreateBookMark } from '../../components/ESRI/ESRITools';
+import Bookmarks from '../../components/ESRI/Bookmarks';
 
 function getBookmarks() {
     const markerString = localStorage.getItem('bookmarks');
@@ -12,23 +13,24 @@ function getBookmarks() {
 
 export default class Adjucation extends Component {
     state = {
-        bookmarks: getBookmarks()
+        bookmarks: getBookmarks(),
+        showBookmarks: false
     }
 
     setBookMark = async () => {
-        const { view } = this.props.value;
-        const bookmark = await CreateBookMark(view);
-        this.setState({ bookmarks: [...this.state.bookmarks, bookmark] })
+        this.setState({ showBookmarks: !this.state.showBookmarks })
     }
+
 
     render() {
 
-        const { bookmarks } = this.state;
-        console.log(bookmarks)
+        const { bookmarks, showBookmarks } = this.state;
+        const { value } = this.props;
         return (<React.Fragment>
             <RibbonContainer>
                 <div className='button__container float-right'>
                     <button onClick={() => this.setBookMark()}>Bookmark</button>
+                    {showBookmarks ? <Bookmarks bookmarks={bookmarks} value={value} /> : null}
                     <NavButton to='/adjudications/pou'>
                         <button onClick={() => this.setState({ POU_Table: true })}>POU</button>
                     </NavButton>

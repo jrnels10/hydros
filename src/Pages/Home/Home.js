@@ -4,13 +4,14 @@ import trackitThumb from '../../Images/Helpdesk_thumbnail.PNG';
 import empDirThumb from '../../Images/employee_facebook.PNG';
 import armThumb from '../../Images/ARM_thumb.PNG';
 import empFloorchartThumb from '../../Images/empFloorchart_thumb.PNG';
+import './Home.css';
 
 
 export default class Home extends Component {
     render() {
         return (
             <Page>
-                <div className="container p-3">
+                <div className="container p-3" id="HomeContainer">
                     <div className="row w-100 align-items-center">
                         <div className="col-md-4">
                         <a href="http://utility/trackitweb/selfservice/login/" target="_blank">

@@ -1,0 +1,13 @@
+
+
+#HomeContainer {
+    background-image: url('./../../Images/image.png');
+    background-position: center; /* Center the image */
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    .card {
+        margin-top: 10px;
+    }
+}

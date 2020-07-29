@@ -4,6 +4,7 @@ import { POUTemp, PODTemp } from './AdjPopupTemplates';
 import { popupAction } from './AdjActions';
 import { POUData } from '../../../Utils/API';
 import POU_Form from '../POU';
+import { getCookie } from '../../../Utils/Tools';
 
 export default class AdjMap extends Component {
     state = {
@@ -20,23 +21,6 @@ export default class AdjMap extends Component {
             initialCenter[0] = getCookie('mapLng')
             initialCenter[1] = getCookie('mapLat')
             initialZoom = getCookie('mapZoom')
-
-
-            function getCookie(cname) {
-                var name = cname + "=";
-                var decodedCookie = decodeURIComponent(document.cookie);
-                var ca = decodedCookie.split(';');
-                for (var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') {
-                        c = c.substring(1);
-                    }
-                    if (c.indexOf(name) == 0) {
-                        return c.substring(name.length, c.length);
-                    }
-                }
-                return "";
-            }
         }
         const { view, webmap } = await CreatePortalMap('adjViewDiv', initialCenter, initialZoom);
         view.when(async () => {

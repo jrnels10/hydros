@@ -25,6 +25,7 @@ export default class AdjIndex extends Component {
                     {value => {
                         return <Page name='Adjudication'  >
                             <Adjucation value={value}>
+                                <Route exact path='/adjudications/' component={Home} data={filtered} />
                                 <Route path='/adjudications/pou' component={POU_Table} data={filtered} />
                                 <Route path='/adjudications/map' render={() => <AdjMap value={value} data={filtered} />} />
                             </Adjucation>
@@ -34,4 +35,8 @@ export default class AdjIndex extends Component {
             </ADJProvider >
         )
     }
+}
+
+const Home = () => {
+    return <h3>home</h3>
 }

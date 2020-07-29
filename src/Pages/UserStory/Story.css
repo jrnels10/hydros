@@ -1,0 +1,15 @@
+#StoryContainer {
+  background: #020024;
+  background: radial-gradient(circle, #020024 0%, #005363 0%, #094d79 97%);
+  height: 100%;
+  width: 100%;
+}
+
+#StoryContainer label {
+  color: white;
+}
+
+#StoryContainer input {
+  width: 100%;
+}
+/*# sourceMappingURL=Story.css.map */

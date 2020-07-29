@@ -1,0 +1,16 @@
+
+
+#StoryContainer {
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,83,99,1) 0%, rgba(9,77,121,1) 97%);
+    height: 100%;
+    width: 100%;
+
+    label {
+        color: white;
+    }
+
+    input {
+        width: 100%
+    }
+}

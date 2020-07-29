@@ -27,6 +27,10 @@ export default class Navbar extends Component {
                         <i className="fa fa-fw fa-sort-numeric-desc"></i>
                         <span>Lithology</span>
                     </NavBarButtonContainer>
+                    <NavBarButtonContainer to='/userStory'>
+                    <i className="fa fa-fw fa-sort"></i>
+                        <span>Submit UserStory</span>
+                    </NavBarButtonContainer>
                 </div>
             </div >
         )

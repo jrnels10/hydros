@@ -10,4 +10,8 @@
 #HomeContainer .card {
   margin-top: 10px;
 }
+
+#HomeContainer .card a:hover {
+  text-decoration: none;
+}
 /*# sourceMappingURL=Home.css.map */

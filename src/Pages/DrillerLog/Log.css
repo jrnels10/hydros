@@ -1,0 +1,25 @@
+#LogContainer {
+  background-image: url("./../../Images/lithologyBackground_resize.jpg");
+  background-position: center;
+  /* Center the image */
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#LogContainer #LogSearchBtn {
+  cursor: pointer;
+  margin-top: -5px;
+  width: 75px;
+}
+
+#LogContainer #LogSearch {
+  width: calc(100% - 75px);
+  border-radius: 2px;
+}
+
+#LogContainer #LogSearchGroup {
+  -webkit-box-shadow: 5px 10px 8px 5px #414141;
+          box-shadow: 5px 10px 8px 5px #414141;
+}
+/*# sourceMappingURL=Log.css.map */

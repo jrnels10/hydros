@@ -34,7 +34,9 @@ export async function zoomToBookmark(view, itemObj) {
     const { spatialReference, xmin, xmax, ymin, ymax } = itemObj;
     const [Extent] = await loadModules(["esri/geometry/Extent"]);
     const extent = new Extent({ spatialReference, xmin, xmax, ymin, ymax });
-    view.goTo(extent);
+    view.goTo(extent, {
+        duration: 3000  // Duration of animation will be 5 seconds
+    });
     return null
 }
 

@@ -1,16 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import { zoomTo, zoomToBookmark, CreateBookMark } from './ESRITools';
-import { BookmarkSVG, BookmarkSVGAdd } from '../../Images/IconSvg';
+import { BookmarkSVG, BookmarkSVGAdd, BookmarkSVGDelete } from '../../Images/IconSvg';
 import TextInputs from '../Inputs/Inputs';
 
 export default class Bookmarks extends Component {
     state = {
-        bookmarks: this.props.bookmarks
+        bookmarks: this.props.bookmarks,
+        selected: null
     }
-
-    bookmarkSelected = (marker) => {
+    bookmarkRef = createRef();
+    bookmarkSelected = (marker, selected) => {
         const { view } = this.props.value;
         zoomToBookmark(view, marker.extent);
+        this.setState({ selected })
+    };
+
+    componentDidMount() {
+        this.bookmarkRef.current.focus();
     };
 
     createNewBookMark = async () => {
@@ -21,7 +27,7 @@ export default class Bookmarks extends Component {
     };
 
     render() {
-        const { bookmarks, bookmarkName } = this.state;
+        const { bookmarks, bookmarkName, selected } = this.state;
         console.log(bookmarks, bookmarkName)
         return (
             <div className='bookmark bookmark__container' >
@@ -29,12 +35,18 @@ export default class Bookmarks extends Component {
                     <div className='bookmark_svg' onClick={() => this.createNewBookMark()}>
                         <BookmarkSVGAdd />
                     </div>
-                    <TextInputs name='bookmarkName' callback={bookmarkName => this.setState({ bookmarkName })} />
+                    <TextInputs name='bookmarkName' placeholder='bookmark name' propRef={this.bookmarkRef} callback={bookmarkName => this.setState({ bookmarkName })} />
                 </div>
                 {
                     bookmarks && bookmarks.length > 0 ? bookmarks.map((marker, idx) => {
-                        return <div key={idx} onClick={() => this.bookmarkSelected(marker)}>
-                            <BookmarkSVG /><label>{marker.name}</label>
+                        const markerSelected = idx === selected ? 'active' : 'default';
+                        return <div className={`bookmark_item bookmark_item--${markerSelected}`} key={idx} onClick={() => this.bookmarkSelected(marker, idx)}>
+                            <div className='bookmark_svg'>
+                                <BookmarkSVG /><label>{marker.name}</label>
+                            </div>
+                            <div className='bookmark_svg_delete'>
+                                <BookmarkSVGDelete color='#f94144ff' />
+                            </div>
                         </div>
                     }) : null
                 }

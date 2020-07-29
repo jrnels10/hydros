@@ -9,6 +9,33 @@
     width: 100%;
     height: calc(100% - 30px);
   }
+  .adj__ribbon__container {
+    float: right;
+    margin-right: 10px;
+    height: 100%;
+    .adj__ribbon__button {
+      height: calc(100% - 6px);
+      width: 30px;
+      position: relative;
+      outline: none;
+      text-decoration: none;
+      border: 1px solid white;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0);
+      margin: 3px;
+      &--active {
+        background-color: $yellow-orange-color-wheel;
+      }
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        fill: white;
+      }
+    }
+  }
   .adj__map__container {
     position: relative;
     float: left;

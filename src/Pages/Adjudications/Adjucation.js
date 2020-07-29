@@ -4,6 +4,7 @@ import { RibbonContainer } from '../../components/Containers/Ribbons';
 import { NavButton } from '../../components/Buttons/NavButtons';
 import { CreateBookMark } from '../../components/ESRI/ESRITools';
 import Bookmarks from '../../components/ESRI/Bookmarks';
+import { BookmarksSVG, MapSVG, FormSVG } from '../../Images/IconSvg';
 
 function getBookmarks() {
     const markerString = localStorage.getItem('bookmarks');
@@ -24,18 +25,18 @@ export default class Adjucation extends Component {
 
     render() {
 
-        const { bookmarks, showBookmarks } = this.state;
+        const { bookmarks, showBookmarks, ribbonButton } = this.state;
         const { value } = this.props;
         return (<React.Fragment>
             <RibbonContainer>
-                <div className='button__container float-right'>
-                    <button onClick={() => this.setBookMark()}>Bookmark</button>
+                <div className='adj__ribbon__container'>
+                    <button className={`adj__ribbon__button adj__ribbon__button--${showBookmarks ? 'active' : ''}`} onClick={() => this.setBookMark()}><BookmarksSVG /></button>
                     {showBookmarks ? <Bookmarks bookmarks={bookmarks} value={value} /> : null}
                     <NavButton to='/adjudications/pou'>
-                        <button onClick={() => this.setState({ POU_Table: true })}>POU</button>
+                        <button className={`adj__ribbon__button adj__ribbon__button--${ribbonButton === 'pou' ? 'active' : ''}`} onClick={() => this.setState({ ribbonButton: 'pou' })}><FormSVG /></button>
                     </NavButton>
                     <NavButton to='/adjudications/map' >
-                        <button onClick={() => this.setState({ adj_Map: true })}>Map</button>
+                        <button className={`adj__ribbon__button adj__ribbon__button--${ribbonButton === 'map' ? 'active' : ''}`} onClick={() => this.setState({ ribbonButton: 'map' })}><MapSVG /></button>
                     </NavButton>
                 </div>
             </RibbonContainer>

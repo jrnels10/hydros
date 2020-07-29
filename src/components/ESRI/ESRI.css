@@ -1,9 +1,138 @@
+/* Coolors Exported Palette - https://coolors.co/f94144-f3722c-f8961e-f9c74f-90be6d-43aa8b-577590 */
+/* SCSS HEX */
+/* SCSS HSL */
+/* SCSS RGB */
+/* SCSS Gradient */
 .bookmark {
   position: absolute;
   top: 30px;
   right: 0;
   z-index: 100;
-  width: 300px;
-  background-color: white;
+  width: 200px;
+  background-color: #577590;
+  max-height: 300px;
+  overflow-y: auto;
+  -webkit-box-shadow: 10px 10px 15px 11px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 15px 11px rgba(0, 0, 0, 0.5);
+}
+
+.bookmark svg {
+  width: 18px;
+  height: 18px;
+}
+
+.bookmark .bookmark__input__container {
+  height: 40px;
+  background-color: #577590;
+  padding: 5px;
+  border-bottom: 1px solid #577590;
+}
+
+.bookmark .bookmark__input__container .bookmark_svg {
+  width: 35px;
+  margin-right: 5px;
+  height: 30px;
+  float: left;
+  border: 1px solid #f9c74f;
+  border-radius: 4px;
+  position: relative;
+}
+
+.bookmark .bookmark__input__container .bookmark_svg svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20px;
+  height: 18px;
+  fill: #f9c74f;
+}
+
+.bookmark .bookmark__input__container input {
+  width: calc(100% - 40px);
+  float: left;
+  height: 30px;
+}
+
+.bookmark .bookmark_item {
+  background-color: #577590;
+  height: 40px;
+  color: white;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin: 2px;
+}
+
+.bookmark .bookmark_item--active {
+  background-color: #90be6d;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.bookmark .bookmark_item--active .bookmark_svg {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.bookmark .bookmark_item--active .bookmark_svg_delete {
+  background-color: rgba(255, 255, 255, 0) !important;
+  border-color: #f94144 !important;
+}
+
+.bookmark .bookmark_item--active .bookmark_svg_delete svg {
+  fill: #f94144 !important;
+}
+
+.bookmark .bookmark_item .bookmark_svg {
+  width: 35px;
+  margin-right: 5px;
+  height: 30px;
+  float: left;
+  background-color: #577590;
+  border: 1px solid white;
+  border-radius: 4px;
+  position: relative;
+}
+
+.bookmark .bookmark_item .bookmark_svg svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20px;
+  height: 18px;
+  fill: white;
+}
+
+.bookmark .bookmark_item .bookmark_svg label {
+  width: 100px;
+  margin-left: 45px;
+  float: left;
+  height: 30px;
+  font-size: 0.8rem;
+}
+
+.bookmark .bookmark_item .bookmark_svg_delete {
+  width: 35px;
+  margin-right: 5px;
+  height: 30px;
+  float: right;
+  background-color: #f94144;
+  border: 1px solid white;
+  border-radius: 4px;
+  position: relative;
+}
+
+.bookmark .bookmark_item .bookmark_svg_delete svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20px;
+  height: 18px;
+  fill: white;
 }
 /*# sourceMappingURL=ESRI.css.map */

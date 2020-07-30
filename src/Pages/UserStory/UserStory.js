@@ -28,7 +28,7 @@ export default class UserStory extends Component {
         alert(`role:${this.state.role}\naction:${this.state.action}\nbenefit:${this.state.benefit}`);
         this.setState({role:'', action:'', benefit:''});
         event.preventDefault();
-        
+        document.getElementById('UserStoryForm').reset();
     }
 
     render() {
@@ -41,7 +41,7 @@ export default class UserStory extends Component {
                         <h4>See a chance to make this app better?</h4>
                         <h4>Submit a User Story for the Dev team!</h4>
                         <h6>The structure of a user story is laid out below</h6>
-                            <form onSubmit={this.handleSubmit}>
+                            <form onSubmit={this.handleSubmit} id="UserStoryForm">
                                 <div className="form-group">
                                     <label htmlFor="userRole">As a...</label>
                                     <input type="text" value={this.state.user} name="userRole" placeholder="<user>" onChange={this.handleChange}/>

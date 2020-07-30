@@ -1,12 +1,15 @@
+@import "./../../cssVariables.scss";
+
 .navbar {
   width: 175px;
   height: 100vh;
   position: relative;
   float: left;
-  box-shadow: 10px 0px 18px rgba(0, 0, 0, 0.25);
   padding: 0;
-  background: linear-gradient(to right, #3a3633 93%, #2a2725 100%);
+  z-index: 200000;
+  background-color: $navbarGrey;
   transition: left 0.5s ease;
+  box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.4);
 
   .hydros__banner {
     position: absolute;
@@ -47,7 +50,7 @@
         height: 39px;
         outline: none;
         text-decoration: none;
-        background: linear-gradient(to right, #3a3633 93%, #2a2725 100%);
+        background: $navbarGrey;
         border: none;
         i {
           height: 10px;

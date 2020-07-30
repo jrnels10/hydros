@@ -6,7 +6,7 @@ import hydrosLogo from '../../Images/hydrosLogo.png';
 export default class Navbar extends Component {
     render() {
         return (
-            <div className='navbar bg-dark'>
+            <div className='navbar '>
                 <div className='hydros__banner'>
                     <img className='hydros__logo' src={hydrosLogo} />
                     {/* <i className="fa fa-arrows-alt mx-2" id="FullScreenButton"></i> */}

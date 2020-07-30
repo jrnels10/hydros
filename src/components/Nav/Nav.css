@@ -1,15 +1,20 @@
+/* Coolors Exported Palette - https://coolors.co/f94144-f3722c-f8961e-f9c74f-90be6d-43aa8b-577590 */
+/* SCSS HEX */
+/* SCSS HSL */
+/* SCSS RGB */
+/* SCSS Gradient */
 .navbar {
   width: 175px;
   height: 100vh;
   position: relative;
   float: left;
-  -webkit-box-shadow: 10px 0px 18px rgba(0, 0, 0, 0.25);
-          box-shadow: 10px 0px 18px rgba(0, 0, 0, 0.25);
   padding: 0;
-  background: -webkit-gradient(linear, left top, right top, color-stop(93%, #3a3633), to(#2a2725));
-  background: linear-gradient(to right, #3a3633 93%, #2a2725 100%);
+  z-index: 200000;
+  background-color: #3a3633;
   -webkit-transition: left 0.5s ease;
   transition: left 0.5s ease;
+  -webkit-box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.4);
 }
 
 .navbar .hydros__banner {
@@ -51,8 +56,7 @@
   height: 39px;
   outline: none;
   text-decoration: none;
-  background: -webkit-gradient(linear, left top, right top, color-stop(93%, #3a3633), to(#2a2725));
-  background: linear-gradient(to right, #3a3633 93%, #2a2725 100%);
+  background: #3a3633;
   border: none;
 }
 

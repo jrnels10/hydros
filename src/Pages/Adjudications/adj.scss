@@ -13,6 +13,7 @@
     float: right;
     margin-right: 10px;
     height: 100%;
+
     .adj__ribbon__button {
       height: calc(100% - 6px);
       width: 30px;
@@ -23,6 +24,7 @@
       border-radius: 4px;
       background-color: rgba(255, 255, 255, 0);
       margin: 3px;
+
       &--active {
         background-color: $yellow-orange-color-wheel;
       }
@@ -40,14 +42,39 @@
     position: relative;
     float: left;
     width: 100%;
-    height: calc(100% - 30px);
-    // &--active {
-    //   width: calc(100% - 60%);
-    // }
+    height: calc(100% - 60px);
+    .adj__map__toolbar {
+      padding: 3px 10px 3px 3px;
+      width: 100%;
+      height: 30px;
+      z-index: 100000;
+      background-color: $queen-blue;
+      box-shadow: -3px 10px 14px rgba(0, 0, 0, 0.41);
+      position: relative;
+      button {
+        height: 100%;
+        position: relative;
+        width: 30px;
+        float: right;
+        outline: none;
+        text-decoration: none;
+        border: 1px solid white;
+        border-radius: 3px;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
     .adj__map,
     #adjViewDiv {
       width: 100%;
       height: 100%;
+      z-index: 1;
     }
     .adj__map {
       float: right;

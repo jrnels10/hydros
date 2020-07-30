@@ -1,15 +1,16 @@
 #StoryContainer {
   background: #020024;
-  background: radial-gradient(circle, #020024 0%, #005363 0%, #094d79 97%);
+  background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(51%, #18454e), to(#020024));
+  background: linear-gradient(90deg, #020024 0%, #18454e 51%, #020024 100%);
   height: 100%;
   width: 100%;
 }
 
-#StoryContainer label {
-  color: white;
+#StoryContainer .jumbotron {
+  padding-top: 5%;
 }
 
-#StoryContainer input {
+#StoryContainer .jumbotron input {
   width: 100%;
 }
 /*# sourceMappingURL=Story.css.map */
